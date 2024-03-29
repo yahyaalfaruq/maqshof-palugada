@@ -1,0 +1,89 @@
+Syntax CSS
+p {
+    font-size: 16px;
+}
+
+p        : selector
+{...}    : declaration (semua konten yang ada di dalam kurung kurawal)
+font-size: property
+16px     : property value
+
+--------------------------------------------------------------------------------
+Selector 
+1. Simple selector : pilih elemen berdasarkan nama elemennya seperti p, 
+div, h1 dsb, dan id (#), atau class (.)
+2. Combinator : memilih element berdasarkan hubungan tertentu  di antara
+elemen-elemen
+3. Pseudo-classes : memilih elemen berdasarkan pada keadaan tertentu
+4. Pseudo-element : memilih dan memberi gaya pada bagian elemen
+
+--------------------------------------------------------------------------------
+---------------
+Combinator Selector 
+1. descendat selector (space)
+2. child selector (>)
+3. adjacent sibling selector (+)
+4. general sibling selector (~)
+
+--------------------------------------------------------------------------------
+--
+pseudo-classes Selector
+:hover, :first-child, :last-child, nth-child(), :active 
+
+--------------------------------------------------------------------------------
+--
+Pseudo-element Selector 
+(ada di html)
+
+-------------------------------------------------------------------------------
+--
+Position Property in CSS : yaitu menentukan jenis dalam pemosisian
+yang digunakan oleh suatu element  
+
+-------------------------------------------------------------------------
+Box-Model
+1. Content
+2. Padding
+3. Border
+4. Outline-offset
+5. Outline
+6. Margin
+7. Absolute/Top & Left (wrap-relative)
+
+--------------------------------------------------------------------------------
+Flex Box -> Kemampuan wadah                         Flex-Flow
+                                                    -> Flex-direction
+                                                    -> Flex-wrap
+- container atau wrap
+1. Padding
+2. Margin
+3. Width (axis)
+4. height (cross)
+
+Horizontal
+- mainsize
+- main axis
+- main starr & main end
+
+Vertical
+- cross size
+- cross start & cross end
+- cross axis
+
+
+
+
+
+
+
+
+
+Absolut Unit (px) : satuan mutlak yaitu satuan yang selalu sama dalam koteks apapun. Jadi 
+ukurannya itu akan tetap sama dalam ukuran layar apapun
+
+Relative Unit (em dan rem) : satuan yang dapat berubah berdasarkan konteksnya.
+Biasanya sering dipakai untuk font-size atau ukuran font (ukuran gaya tulisan)
+
+Viewport Unit (vh dan vw) : satuan yang berhubungan dengan unit area pandang
+yaitu tinggi dan lrbar suty layar. Macamnya ada dua yaitu viewport-height (vh)
+dan viewport-widht (vw).

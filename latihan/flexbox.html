@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox CSS</title>
+    <style>
+        .flexbox {
+            /* flex-flow */
+            background-color: blue;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: row wrap;
+        }
+
+        .flexbox > div {
+            width: 20%;
+            padding: 10px;
+            margin: 10px;
+            background-color: white;
+        }
+        .justify-content-center {
+            background-color: red;
+            display: flex;
+            justify-content: center;
+        }
+
+        .justify-content-center > div {
+            width: 10%;
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+        }
+        .justify-content-star {
+            background-color: red;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .justify-content-star > div {
+            width: 10%;
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+        }
+        .justify-content-end {
+            background-color: red;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .justify-content-end > div {
+            width: 10%;
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+        }
+        .justify-content-space-around {
+            background-color: red;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .justify-content-space-around > div {
+            width: 10%;
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+        }
+        .justify-content-space-evenly {
+            background-color: red;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .justify-content-space-evenly > div {
+            width: 10%;
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+        }
+        .justify-content-space-beetwen {
+            background-color: red;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .justify-content-space-beetwen > div {
+            width: 10%;
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+        }
+        .align-items-center {
+            background-color: blue;
+            display: flex;
+            height: 200px;
+            align-items: center;
+        }
+
+        .align-items-center > div {
+            width: 10%;
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+        }
+        .align-items-start {
+            background-color: blue;
+            display: flex;
+            height: 200px;
+            align-items: start;
+        }
+
+        .align-items-start > div {
+            width: 10%;
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+        }
+        .align-items-end {
+            background-color: blue;
+            display: flex;
+            height: 200px;
+            align-items: end;
+            justify-content: flex-end;
+        }
+
+        .align-items-end > div {
+            width: 10%;
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+        }
+        
+        .align-items-stretch {
+            background-color: blue;
+            display: flex;
+            height: 200px;
+            align-items: flex-end;
+            align-items: stretch;
+            justify-content: flex-end;
+        }
+
+        .align-items-stretch > div {
+            width: 10%;
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+        }
+        .align-items-baseline {
+            display: flex;
+            background-color: yellow;
+            align-items: baseline;
+            height: 300px;
+        }
+        .align-items-baseline .satu {
+            font-size: 20px;
+        }
+        .align-items-baseline .dua {
+            font-size: 50px;
+        }
+        .align-items-baseline .tiga {
+            font-size: 100px;
+        }
+        .align-content {
+            height: 400px;
+            /* align-content: center; */
+            /* align-content: stretch; */
+            /* align-content: start; */
+            /* align-content: end; */
+            /* align-content: space-evenly; */
+            align-content: space-between;
+            /* align-content: space-around; */
+            flex-wrap: wrap;
+            display: flex;
+            background-color: aqua;
+        }
+        .align-content > div {
+            width: 20%;
+            /* height: 50px; */
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+        }
+        .align-self {
+            display: flex;
+            background-color: yellowgreen;
+            height: 400px;
+        }
+        .align-self > div {
+            width: 50%;
+            height: 20px;
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+        }
+        .align-self .empat {
+            align-self: center;
+            order: -1;
+        }
+        .align-self .dua {
+            align-self: end;
+            order: 3;
+        }
+        .flex-grow {
+            display: flex;
+            background-color: orange;
+        }
+        .flex-grow > div {
+            margin: 10px;
+            padding: 20px;
+            background-color: white;
+        }
+        .flex-grow .dua {
+            flex-grow: 4;
+        }
+        .flex-grow .empat {
+            flex-grow: 3;
+        }
+        .flex-grow .satu {
+            flex-grow: 2;
+        }
+        .flex-grow .tiga {
+            flex-grow: 10;
+        }
+        .flex-shrink {
+            display: flex; 
+            background-color: orange;
+            /* flex-grow: 1; */
+            /* flex-basis: 100px; */
+        }
+        .flex-shrink > div {
+            width: 100%;
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+        }
+        .flex-shrink .dua {
+            flex-shrink: 2;
+        }
+        .flex-shrink .tiga {
+            flex-shrink: 5;
+        }
+        .flex-basis {
+            width: 100%;
+            display: flex;
+            background-color: pink;
+        }
+        .flex-basis > div {
+            padding: 20px;
+            margin: 10px;
+            background-color: yellow;
+            flex-grow: 0;
+            flex-basis: 50px;
+            flex-shrink: 0;
+        }
+        .flex-basis .tiga {
+            flex-basis: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Flex Basis - Main Axis (Horizontal) - Kiri ke Kanan</h3>
+    <div class="flex-basis">
+         <div class="satu">satu - 50px</div>
+         <div class="dua">dua - 50px</div>
+         <div class="tiga">tiga - 100px</div>
+         <div class="empat">empat - 50px</div>
+    </div>
+    <p><hr></p>
+    <h3>Flex Shrink - Main Axis (Horizontal) - Kiri ke Kanan</h3>
+    <div class="flex-shrink">
+         <div class="satu">1</div>
+         <div class="dua"> 2</div>
+         <div class="tiga">3</div>
+         <div class="empat">4</div>
+    </div>
+    <p><hr></p>
+    <h3>Flex Grow - Main Axis (Horizontal) - Kiri ke Kanan</h3>
+    <div class="flex-grow">
+         <div class="satu">1</div>
+         <div class="dua"> 2</div>
+         <div class="tiga">3</div>
+         <div class="empat">4</div>
+    </div>
+    <p><hr></p>
+    <h3>Align Self - Cross Axis (vertical) - Atas ke Bawah</h3>
+    <div class="align-self">
+         <div class="satu">align-self 1</div>
+         <div class="dua">align-self 2</div>
+         <div class="tiga">align-self 3</div>
+         <div class="empat">align-self 4</div>
+    </div>
+    <p><hr></p>
+    <h3>Align Content - Cross Axis (vertical) - Atas ke Bawah</h3>
+    <div class="align-content">
+         <div class="satu">align-content</div>
+         <div class="dua">align-content</div>
+         <div class="tiga">align-content</div>
+         <div class="empat">align-content</div>
+         <div class="lima">align-content</div>
+         <div class="enam">align-content</div>
+         <div class="tujuh">align-content</div>
+         <div class="delapan">align-content</div>
+         <div class="sembilan">align-content</div>
+    </div>
+    <p><hr></p>
+    <h3>Cross Axis (Vertical)</h3>
+    <div class="align-items-baseline">
+        <div class="satu">baseline</div>
+        <div class="dua">baseline</div>
+        <div class="tiga">baseline</div>
+    </div>
+    <p><hr></p>
+    <div class="align-items-stretch">
+        <div class="satu">stretch</div>
+        <div class="satu">stretch</div>
+        <div class="satu">stretch</div>
+    </div>
+    <p><hr></p>
+    <div class="align-items-end">
+        <div class="satu">cross-end</div>
+        <div class="satu">cross-end</div>
+        <div class="satu">cross-end</div>
+    </div>
+    <p><hr></p>
+    <div class="align-items-start">
+        <div class="satu">cross-start</div>
+        <div class="satu">cross-start</div>
+        <div class="satu">cross-start</div>
+    </div>
+    <p><hr></p>
+    <div class="align-items-center">
+        <div class="satu">align-items-center</div>
+        <div class="satu">align-items-center</div>
+        <div class="satu">align-items-center</div>
+    </div>
+    <p><hr></p>
+    <h3>Main Axis (Horizontal)</h3>
+    <div class="justify-content-space-beetwen">
+        <div class="satu">space-beeetwen</div>
+        <div class="satu">space-beetwen</div>
+        <div class="satu">space-beetwen</div>
+    </div>
+    <p><hr></p>
+    <div class="justify-content-space-evenly">
+        <div class="satu">space-evenly</div>
+        <div class="satu">space-evenly</div>
+        <div class="satu">space-evenly</div>
+    </div>
+    <p><hr></p>
+    <div class="justify-content-space-around">
+        <div class="satu">space-around</div>
+        <div class="satu">space-around</div>
+        <div class="satu">space-around</div>
+    </div>
+    <p><hr></p>
+    <div class="justify-content-end">
+        <div class="satu">main-end</div>
+        <div class="satu">main-end</div>
+        <div class="satu">main-end</div>
+    </div>
+    <p><hr></p>
+    <div class="justify-content-star">
+        <div class="satu">main-star</div>
+        <div class="satu">main-star</div>
+        <div class="satu">main-star</div>
+    </div>
+    <p><hr></p>
+        <div class="justify-content-center">
+            <div class="satu">Center</div>
+            <div class="satu">Center</div>
+            <div class="satu">Center</div>
+        </div>
+    <p><hr></p>
+    <div class="flexbox">
+        <div class="satu">Satu</div>
+        <div class="satu">Dua</div>
+        <div class="satu">Tiga</div>
+        <div class="satu">Empat</div>
+        <div class="satu">Lima</div>
+        <div class="satu">Enam</div>
+        <div class="satu">Tujuh</div>
+        <div class="satu">Delapan</div>
+    </div>
+</body>
+</html>

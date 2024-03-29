@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS</title>
+    <style>
+      p {
+        /* absolute (px) */
+        font-size: 15px;
+      }
+
+      .relative-rem {
+        /* 2em = 2 + 12px*/
+        font-size: 2rem;
+      }
+
+      .relative-em {
+        font-size: 20px;
+      }
+
+      .relative-em p:nth-child(1) {
+        font-size: 2em;
+      }
+
+      .viewport-height {
+        /* 1vh = 1% dari tinggi area pandang  */
+        font-size: 5vh;
+        color: blue;
+      }
+
+      .viewport-width {
+        /* 1vw = 1% dari lebar area pandang */
+        font-size: 5vw;
+        color: red;
+      }
+
+      .wrapping-descendant div {
+        background-color: blue;
+      }
+
+      .wrapping-child div > p {
+        /* semua elemen p di dalam div tanpa ada pembungkus elemen p yang lain */
+        background-color: yellow;
+      }
+
+      .wrapping-adjacent-sibling div + p {
+        /* satu elemen p tepat setelah div  */
+        background-color: aqua;
+      }
+      a[href="#"] {
+        background-color: blueviolet;
+        color: white;
+        text-decoration: none;
+      }
+      .wrapping-general-sibling div ~ p {
+        /* menyeleksi semua element p setelah
+        div secara langsung bukan di dalam
+        sebyah bungkusan lagi */
+        background-color: red;
+      }
+      .wrapping-pseudo a:hover {
+        background-color: red;
+      }
+      .wrapping-pseudo div p:nth-child(2) {
+        background-color: aquamarine;
+      }
+      .wrapping-pseudo div p:first-child {
+        background-color: pink;
+      }
+      .wrapping-pseudo div p:last-child {
+        background-color: blue;
+      }
+      .wrapping-pseudoelement p::first-letter {
+        color: red;
+        font-size: 30px;
+      }
+      .wrapping-pseudoelement p::first-line {
+        background-color: yellow;
+      }
+      .position-property {
+        border: 2px solid red;
+        position: relative;
+      }
+      .position-property p:nth-child(1) {
+        /*static :
+        -terpengaruh dengan margin, padding dan
+        -tidak terpengaruh properti top, button,left, dan right
+        -mengikuti alur struktur */
+        position: static;
+        border: 1px solid #73ad21;
+      }
+      .position-property p:nth-child(2) {
+        /* Relative :
+        -margin, padding, top, left, right, bottom
+        -mengikuti alur struktur */
+        position: relative;
+        left: 20px;
+        top: 20px;
+        border: 1px solid violet;
+      }
+      .position-property p:nth-child(3) {
+        /* Absolute :
+        -tergantung bagaimana pembungkusnya
+        bila relative maka mengikuti
+        -margin, padding, top, left, right, bottom */
+        position: absolute;
+        left: 0px;
+        top: 20px;
+        border: 1px solid blue;
+      }
+      /* Fixed :
+      -terpengaruh dengan padding, margin, top, left,
+      right, bottom dan mengikuti layar */
+      .position-property p:nth-child(4) {
+        /* position: fixed; */
+        border: 1px solid brown;
+        top: 0px;
+        margin: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 30px;
+      }
+      .position-property p:nth-child(5) {
+        /* position: sticky; */
+        border: 1px solid yellow;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        margin: 0px;
+      }
+      .sticky-satu {
+        /*  position: sticky; */
+        top: 0px;
+        /* text-align: right;  */
+      }
+      .sticky-dua {
+        /* position: sticky; */
+        top: 90px;
+        /* text-align: right; */
+      }
+      :root {
+        --header: 3rem;
+        --footer: 40px;
+        --main: calc(100vw - calc(var(--header) + var(--footer)));
+        --judul: 20px;
+        --subjudul: 15px;
+      }
+      #header {
+        height: var(--header);
+        background-color: blue;
+        font-size: var(--judul);
+      }
+      #main-content {
+        background-color: red;
+        font-size: var(--subjudul);
+        height: var(--main);
+      }
+      #footer {
+        height: var(--footer);
+        font-size: var(--subjudul);
+        background-color: #73ad21;
+      }
+      .min-css {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+        border: 6px solid black;
+        resize: both;
+        overflow: auto;
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .max-css {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+        border: 6px solid black;
+        resize: both;
+        overflow: auto;
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .min-css #icon-holder {
+        height: min(150px, 100%);
+        width: min(150px, 100%);
+        box-sizing: border-box;
+        border: 6px solid blue;
+      }
+      .max-css #icon-holder {
+        height: max(100px, 4rem, 50%);
+        width: max(100px, 4rem, 50%);
+        box-sizing: border-box;
+        border: 6px solid red;
+      }
+      .wrapping-clamp h2 {
+        /* clamp nilai minimum, ideal, maksimal */
+        font-size: clamp(14px, 2rem, 80vw);
+      }
+      .wrapping-clamp p:nth-child(2) {
+        font-size: 5vw;
+      }
+      .wrapping-clamp p:nth-child(3) {
+        font-size: clamp(1cm, 4vw, 10cm);
+      }
+      .wrapping-overflow {
+        border: 2px solid black;
+        height: 80px;
+        width: 80px;
+        /* overflow: visible; */
+        /* overflow: hidden; */
+        overflow: scroll;
+        /* overflow: clip; */
+        /* overflow-clip-margin: 40px; */
+        /* overflow: auto; */
+
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Overflow CSS</h3>
+    <div class="wrapping-overflow">
+      <!-- visible - header - clip - scroll - auto -->
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+        deleniti ipsum blanditiis quis animi eaque facere vel, cupiditate labore
+        consequuntur tempora modi facilis maxime officiis, ea provident
+        recusandae mollitia quasi!
+      </p>
+    </div>
+    <hr />
+    <h3>Clamp()</h3>
+    <div class="wrapping-clamp">
+      <h2>Ini adalah judul clamp</h2>
+      <p>Paragraf no-clamp</p>
+      <p>Paragraf clamp</p>
+    </div>
+    <hr />
+    <h3>min() & max() CSS</h3>
+    <div class="max-css">
+      <img
+        src="https://avatars.githubusercontent.com/u/4441966?s=200&v=4"
+        alt="icon"
+        id="icon-holder"
+      />
+    </div>
+    <br />
+    <div class="min-css">
+      <img
+        src="https://avatars.githubusercontent.com/u/4441966?s=200&v=4"
+        alt="icon"
+        id="icon-holder"
+      />
+    </div>
+    <hr />
+    <h3>CSS Function calc()</h3>
+    <div class="function-calc">
+      <header id="header">header</header>
+      <main id="main-content">main</main>
+      <footer id="footer">footer</footer>
+    </div>
+    <hr />
+    <h3>Position Property in CSS</h3>
+    <div class="position-property">
+      <p>Pragraf static</p>
+      <p>Pragraf relative</p>
+      <p>Pragraf absolute</p>
+      <p>Pragraf fixed</p>
+      <p>Pragraf sticky</p>
+    </div>
+    <p class="sticky-satu">Pragraf sticky satu</p>
+    <p class="sticky-dua">Pragraf sticky dua</p>
+    <hr />
+    <h3>Pseudo-element selector</h3>
+    <div class="wrapping-pseudoelement">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed praesentium
+        sapiente saepe veniam laudantium placeat, vitae magnam odio quam, natus
+        rerum! Dolores quas maxime porro accusamus non nemo laborum ullam.
+      </p>
+    </div>
+    <hr />
+    <h3>Pseudo-classes selector</h3>
+    <div class="wrapping-pseudo">
+      <a href="">Paragraf 1</a>
+      <div>
+        <p>Pertama</p>
+        <p>Kedua</p>
+        <p>Ketiga</p>
+        <p>Keempat</p>
+      </div>
+    </div>
+    <hr />
+    <h3>General sibling selector</h3>
+    <div class="wrapping-general-sibling">
+      <div>
+        <p>Paragraf 1</p>
+        <p>Paragraf 2</p>
+      </div>
+      <p>Pragraf 3</p>
+      <main>
+        <p>Paragraf 4</p>
+      </main>
+      <p>Paragraf 5</p>
+    </div>
+    <hr />
+    <h3>[atribut="value"] selector</h3>
+    <p>Pertama <a href="#">Kedua</a> Ketiga <a href="abc">Keempat</a></p>
+    <hr />
+    <h3>Adjacent sibling selector</h3>
+    <div class="wrapping-adjacent-sibling">
+      <div>
+        <p>Paragraf 1</p>
+      </div>
+      <p>Paragraf 2</p>
+      <div>
+        <p>Paragraf 3</p>
+      </div>
+      <p>Paragraf 4</p>
+    </div>
+    <hr />
+    <h3>Child selector</h3>
+    <div class="wrapping-child">
+      <div>
+        <p>Paragraf 1</p>
+        <main>
+          <p>Paragraf 2</p>
+        </main>
+        <p>Paragraf 3</p>
+      </div>
+      <p>Paragraf 4</p>
+      <p>Paragraf 5</p>
+    </div>
+    <hr />
+    <!-- Descendant selector (space) -->
+    <h3>Descendant selector</h3>
+    <div class="wrapping-descendant">
+      <div>
+        <p>Paragraf 1</p>
+        <p>Paragraf 2</p>
+        <p>Paragraf 3</p>
+      </div>
+      <p>Paragraf 4</p>
+      <p>Paragraf 5</p>
+    </div>
+    <hr />
+    <!-- Absolut Unit,Relative Unit,Viewport Unit -->
+
+    <!-- Absolute Unit -->
+    <p class="absolute">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia temporibus,
+      eveniet.
+    </p>
+
+    <!-- Relative Unit -->
+    <h3>Relative Unit</h3>
+    <p class="relative-rem">Paragraf relative rem</p>
+    <div class="relative-em">
+      <p>Paragraf relative em 1</p>
+      <p>Paragraf relative em 2</p>
+    </div>
+
+    <!-- Viewmport Unit -->
+    <p class="viewport-width">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni sapiente
+      consectetur!
+    </p>
+    <p class="viewport-height">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni sapiente
+      consectetur!
+    </p>
+    <hr />
+  </body>
+</html>

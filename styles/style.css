@@ -1,0 +1,44 @@
+/* Tampilan Mobile */
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.wrap {
+  margin: clamp(2rem, 20px, 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-left p,
+.side-right p,
+.side-center p {
+  margin: 0px;
+  border: 2px solid;
+}
+
+/* Tampilan Tablet / Ipad */
+@media (min-width: 760px) {
+    .container {
+        flex-direction: row;
+    }
+}
+
+/* Tampilan Desktop */
+@media (min-width: 1280px) {
+}
+
+/* Tampilan Mackbook / Laptop */
+@media (min-width: 1024px) {
+}
